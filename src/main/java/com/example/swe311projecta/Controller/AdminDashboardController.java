@@ -1,4 +1,4 @@
-package com.example.adminapp.Controller;
+package com.example.swe311projecta.Controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

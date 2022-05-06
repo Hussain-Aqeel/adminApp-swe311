@@ -1,4 +1,4 @@
-package com.example.adminapp;
+package com.example.swe311projecta;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

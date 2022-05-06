@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="885.0" prefWidth="1157.0" style="-fx-background-color: #f4f4f4;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.adminapp.Controller.AdminDashboardController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="885.0" prefWidth="1157.0" style="-fx-background-color: #f4f4f4;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.swe311projecta.Controller.AdminDashboardController">
    <children>
       <Rectangle arcHeight="50.0" arcWidth="50.0" fill="WHITE" height="497.0" layoutX="801.0" layoutY="66.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeMiterLimit="20.0" strokeType="INSIDE" strokeWidth="0.0" width="315.0" />
       <Label layoutX="838.0" layoutY="171.0" style="-fx-text-fill: #333;" text="name:" textFill="#333333">
