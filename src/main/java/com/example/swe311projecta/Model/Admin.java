@@ -135,6 +135,12 @@ public class Admin implements Serializable {
 
 
     }
+    public String numOfOnlineOverTotal(){
+        Collection<ContactStatus> statuses =hashMap.values();
+        int i= (int) statuses.stream().filter(contactStatus -> contactStatus.isOnline() == true).count();
+        return i+"/"+statuses.size();
+
+    }
 
 
     public Collection<String> getStatusList() {

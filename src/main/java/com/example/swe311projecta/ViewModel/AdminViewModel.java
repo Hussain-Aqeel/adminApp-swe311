@@ -31,7 +31,7 @@ public class AdminViewModel {
     private StringProperty name;
     private StringProperty ip;
     private IntegerProperty port;
-
+    private StringProperty onlineCount;
     public ObservableList<String> getContactStatuses() {
         return contactStatuses;
     }
@@ -48,7 +48,7 @@ public class AdminViewModel {
         name=new SimpleStringProperty();
         ip=new SimpleStringProperty();
         port=new SimpleIntegerProperty();
-
+        onlineCount=new SimpleStringProperty(admin.numOfOnlineOverTotal());
 
     }
 
@@ -94,6 +94,7 @@ public class AdminViewModel {
         approvedContact.setAll(admin.getApprovedContacts());
         pendingContact.setAll(admin.getPendingList());
         contactStatuses.setAll(admin.getStatusList());
+        onlineCount.setValue(admin.numOfOnlineOverTotal());
         admin.sendApprovedContact();
     }
 
@@ -136,5 +137,13 @@ public class AdminViewModel {
         } catch (InvalidKeyException e) {
             e.printStackTrace();
         }
+    }
+
+    public String getOnlineCount() {
+        return onlineCount.get();
+    }
+
+    public StringProperty onlineCountProperty() {
+        return onlineCount;
     }
 }

@@ -1,7 +1,6 @@
 package com.example.swe311projecta.Core;
 
 
-import com.example.swe311projecta.AdminApplication;
 import com.example.swe311projecta.Controller.AdminDashboardController;
 import com.example.swe311projecta.Controller.AdminStartViewController;
 import javafx.fxml.FXMLLoader;

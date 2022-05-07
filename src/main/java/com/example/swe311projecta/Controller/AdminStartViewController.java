@@ -40,6 +40,7 @@ public class AdminStartViewController {
     adminPassword.textProperty().bindBidirectional(adminStartUpViewModel.passwordProperty());
     StringConverter s=new IntegerStringConverter();
     adminPort.textProperty().bindBidirectional(adminStartUpViewModel.portProperty(),s);
+    adminIp.setText("127.0.0.1");
   }
   
   @FXML

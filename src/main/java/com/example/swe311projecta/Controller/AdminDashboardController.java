@@ -9,6 +9,7 @@ import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.util.Duration;
@@ -18,6 +19,7 @@ import javafx.util.converter.IntegerStringConverter;
 public class AdminDashboardController {
   public ListView<Contact> approvedList;
   public ListView contactStatus;
+  public Label numOfOnline;
   AdminViewModel adminViewModel;
   
   @FXML
@@ -70,6 +72,7 @@ public class AdminDashboardController {
     this.pendingList.setItems(adminViewModel.getPendingContact());
     this.approvedList.setItems(adminViewModel.getApprovedContact());
     contactStatus.setItems(adminViewModel.getContactStatuses());
+    numOfOnline.textProperty().bindBidirectional(adminViewModel.onlineCountProperty());
     ip.textProperty().bindBidirectional(adminViewModel.ipProperty());
     name.textProperty().bindBidirectional(adminViewModel.nameProperty());
     port.textProperty().bindBidirectional(adminViewModel.portProperty(),(StringConverter) new IntegerStringConverter());

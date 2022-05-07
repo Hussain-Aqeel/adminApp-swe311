@@ -13,9 +13,9 @@ import java.io.IOException;
 public class AdminApplication extends Application {
   @Override
   public void start(Stage stage) throws IOException {
-    System.setProperty("javax.net.ssl.keyStore","myKeyStore.jks");
+    System.setProperty("javax.net.ssl.keyStore","keys/myKeyStore.jks");
 
-    System.setProperty("javax.net.ssl.trustStore","myTrustStore.jts");
+    System.setProperty("javax.net.ssl.trustStore","keys/myTrustStore.jts");
 
     // System.setProperty("javax.net.debug","all");
     System.setProperty("javax.net.ssl.trustStorePassword","123456");
