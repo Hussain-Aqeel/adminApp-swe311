@@ -5,6 +5,7 @@ import lombok.Data;
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 
 @Data
@@ -17,13 +18,7 @@ public class Admin implements Serializable {
     private transient String password;
     private transient HashMap<Contact,ContactStatus> hashMap;
     public static void main(String[] args) throws InterruptedException {
-        System.setProperty("javax.net.ssl.keyStore","myKeyStore.jks");
 
-        System.setProperty("javax.net.ssl.trustStore","myTrustStore.jts");
-
-        // System.setProperty("javax.net.debug","all");
-        System.setProperty("javax.net.ssl.trustStorePassword","123456");
-        System.setProperty("javax.net.ssl.keyStorePassword","123456");
         Admin admin=new Admin("127.0.0.1",5555,"s");
 
         admin.listen();
@@ -55,6 +50,7 @@ public class Admin implements Serializable {
     public void init(String password) {
         receiver = new Receiver(this);
         this.password = password;
+        hashMap=new HashMap<>();
         approvedContacts.forEach(contact -> hashMap.put(contact,new ContactStatus()));
 
     }
@@ -82,7 +78,9 @@ public class Admin implements Serializable {
     }
 
     public void approveContact(Contact contact){
-        if (pendingList.remove(contact)){
+        pendingList.remove(contact);
+
+        {
             approvedContacts.add(contact);
             hashMap.put(contact,new ContactStatus());
 
@@ -120,7 +118,7 @@ public class Admin implements Serializable {
                     {
 
                         contactStatus.setOnline(true);
-                        contactStatus.setUptime(contactStatus.getUptime()+60);
+                        contactStatus.setUptime(contactStatus.getUptime()+5);
                     }
                     else{
 
@@ -136,5 +134,12 @@ public class Admin implements Serializable {
         });
 
 
+    }
+
+
+    public Collection<String> getStatusList() {
+        ArrayList<String> m=new ArrayList<>();
+        hashMap.forEach((contact, contactStatus) -> m.add(contact.toString()+contactStatus));
+        return m;
     }
 }

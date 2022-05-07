@@ -14,9 +14,6 @@ public class ContactStatus {
 
     @Override
     public String toString() {
-        return "ContactStatus{" +
-                "uptime=" + uptime +
-                ", online=" + online +
-                '}';
+        return String.format("online:%b, uptime:%d sec",online,uptime);
     }
 }

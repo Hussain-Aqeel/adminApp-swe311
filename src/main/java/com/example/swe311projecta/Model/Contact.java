@@ -22,11 +22,7 @@ public class Contact implements Serializable {
 
     @Override
     public String toString() {
-        return "Contact{" +
-                "ip='" + ip + '\'' +
-                ", name='" + name + '\'' +
-                ", port=" + port +
-                '}';
+        return String.format("%s,[%s],[%d]",name,ip,port);
     }
 
     @Override

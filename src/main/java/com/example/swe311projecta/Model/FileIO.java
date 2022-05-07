@@ -16,7 +16,7 @@ import java.security.spec.InvalidKeySpecException;
 public class FileIO {
     private  File file = new File("user.data");
     
-    public  Admin fileToUser(String password) throws IOException, ClassNotFoundException, InvalidAlgorithmParameterException, NoSuchPaddingException, IllegalBlockSizeException, NoSuchAlgorithmException, InvalidKeySpecException, BadPaddingException, InvalidKeyException {
+    public  Admin fileToAdmin(String password) throws IOException, ClassNotFoundException, InvalidAlgorithmParameterException, NoSuchPaddingException, IllegalBlockSizeException, NoSuchAlgorithmException, InvalidKeySpecException, BadPaddingException, InvalidKeyException {
         ObjectInputStream objectInputStream=new ObjectInputStream(new FileInputStream(file));
         SealedObject sealedObject= (SealedObject) objectInputStream.readObject();
         objectInputStream.close();
