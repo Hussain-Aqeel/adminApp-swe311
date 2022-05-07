@@ -1,11 +1,13 @@
 module com.example.adminapp {
   requires javafx.controls;
   requires javafx.fxml;
+  requires java.sql;
   
   requires org.controlsfx.controls;
-  
-  opens com.example.adminapp to javafx.fxml;
-  opens com.example.adminapp.Controller to javafx.fxml;
-  exports com.example.adminapp;
-  exports com.example.adminapp.Controller;
+    requires lombok;
+
+    opens com.example.swe311projecta to javafx.fxml;
+  opens com.example.swe311projecta.Controller to javafx.fxml;
+  exports com.example.swe311projecta;
+  exports com.example.swe311projecta.Controller;
 }
